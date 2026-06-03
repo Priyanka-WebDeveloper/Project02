@@ -1,4 +1,4 @@
-# Project02
+<img width="1904" height="1026" alt="image" src="https://github.com/user-attachments/assets/7c5577d8-3731-4e1b-a346-2c28f6d5c6b3" /># Project02
 Smart travel planning web app built with Flask that provides personalized destination recommendations and travel tips.
 AI Travel Planner Application
 Description
@@ -17,6 +17,7 @@ The purpose of the AI Travel Planner is to simplify the travel planning process 
 
 Recommending destinations based on user preferences.
 Reducing the time spent searching for travel options.
+
 Providing estimated travel costs.
 Generating personalized travel itineraries.
 Offering useful travel tips for selected destinations.
@@ -79,3 +80,12 @@ Planning a trip often requires extensive research regarding destinations, budget
 Conclusion
 
 The AI Travel Planner successfully demonstrates how artificial intelligence and web technologies can be combined to simplify travel planning. By analyzing user preferences such as trip type, budget, season, and duration, the system provides personalized destination recommendations, estimated costs, itineraries, and travel tips. The project offers a practical solution for travelers and serves as a strong foundation for future enhancements involving advanced AI, machine learning, and real-time travel services.
+<img width="1904" height="1026" alt="image" src="https://github.com/user-attachments/assets/98a096ab-b5d0-481c-a048-e4d1e6aca6fb" />
+<img width="743" height="409" alt="image" src="https://github.com/user-attachments/assets/b02da314-ef37-4635-91b9-0e8e25c996c6" />
+<img width="795" height="323" alt="image" src="https://github.com/user-attachments/assets/f28ba1b8-6824-4b3c-b075-1ded5f67dcc1" />
+<img width="688" height="337" alt="image" src="https://github.com/user-attachments/assets/67148374-7d5a-46d8-9d6d-831d7a7d8051" />
+<img width="657" height="242" alt="image" src="https://github.com/user-attachments/assets/713862e3-69b1-401e-acd9-044fe1a6d672" />
+<img width="1917" height="1076" alt="image" src="https://github.com/user-attachments/assets/244754ca-5b66-469a-9940-7cb45e57222d" />
+
+
+
