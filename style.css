@@ -1,0 +1,173 @@
+/* ================= Body & Global ================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0a1f44, #1f3a7a); /* dark blue → royal blue */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 1s ease;
+}
+
+/* ================= Container ================= */
+.container {
+    width: 90%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.08); /* soft white overlay */
+    backdrop-filter: blur(20px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+}
+
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 35px 70px rgba(0,0,0,0.5);
+}
+
+/* ================= Heading ================= */
+h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #ffca28; /* bright gold */
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.5);
+}
+
+/* ================= Form (Left Column) ================= */
+.travel-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 0;
+}
+
+label {
+    font-weight: 600;
+    color: #fbe9a7; /* light gold */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+select, input {
+    padding: 16px;
+    border-radius: 18px;
+    border: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.12); /* semi-transparent white */
+    backdrop-filter: blur(12px);
+    color: #0a1f44; /* dark blue text */
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    appearance: none;
+}
+
+select:focus, input:focus {
+    outline: none;
+    transform: scale(1.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 10px #ffca28;
+}
+
+/* ================= Select Option Styling ================= */
+select option {
+    background: linear-gradient(135deg, #0a1f44, #1f3a7a); /* dark blue → royal blue */
+    color: #ffca28; /* gold text */
+    padding: 10px;
+}
+
+select option:hover {
+    background: linear-gradient(135deg, #1f3a7a, #3a5abf); /* lighter blue gradient */
+    color: #fbe9a7; /* light gold text */
+}
+
+select:focus option:checked {
+    background: #ffca28; /* gold highlight for selected */
+    color: #0a1f44; /* dark blue text */
+}
+
+/* ================= Button ================= */
+button {
+    padding: 16px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #ffca28, #ffb300); /* gold gradient */
+    color: #0a1f44; /* dark blue text */
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 20px #ffca28;
+    align-self: flex-start;
+}
+
+button:hover {
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px #ffb300;
+}
+
+/* ================= Result Section (Right Column) ================= */
+.result-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.12); /* semi-transparent white */
+    backdrop-filter: blur(14px);
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+    animation: fadeIn 0.8s ease-in-out;
+    transition: transform 0.4s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-6px) scale(1.04);
+}
+
+.result-card h2 span {
+    color: #ffb300; /* gold accent */
+    text-shadow: 0 0 12px #ffb300;
+}
+
+.info-box {
+    margin-top: 18px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    border-left: 6px solid #ffb300;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+}
+
+.error-card {
+    margin-top: 22px;
+    padding: 20px;
+    background: rgba(255, 100, 100, 0.25);
+    backdrop-filter: blur(10px);
+    color: #b10000;
+    border-radius: 18px;
+    font-weight: 600;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.18);
+    text-align: center;
+}
+
+/* ================= Animations ================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}

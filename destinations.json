@@ -1,0 +1,29 @@
+#travel_data.py
+
+DESTINATIONS = [
+    {"city": "Delhi", "trip_type": "cultural", "budget": "medium", "season": "winter", "attractions": ["Red Fort", "India Gate", "Qutub Minar", "Lotus Temple"], "avg_cost_per_day": 80},
+    {"city": "Agra", "trip_type": "romantic", "budget": "medium", "season": "winter", "attractions": ["Taj Mahal", "Agra Fort", "Fatehpur Sikri"], "avg_cost_per_day": 70},
+    {"city": "Jaipur", "trip_type": "cultural", "budget": "medium", "season": "winter", "attractions": ["Amber Fort", "City Palace", "Hawa Mahal", "Jantar Mantar"], "avg_cost_per_day": 75},
+    {"city": "Goa", "trip_type": "adventure", "budget": "medium", "season": "winter", "attractions": ["Baga Beach", "Palolem Beach", "Fort Aguada", "Dudhsagar Waterfalls"], "avg_cost_per_day": 90},
+    {"city": "Mumbai", "trip_type": "urban", "budget": "high", "season": "winter", "attractions": ["Gateway of India", "Marine Drive", "Elephanta Caves", "Chhatrapati Shivaji Terminus"], "avg_cost_per_day": 150},
+    {"city": "Kolkata", "trip_type": "cultural", "budget": "medium", "season": "winter", "attractions": ["Victoria Memorial", "Howrah Bridge", "Indian Museum", "Dakshineswar Kali Temple"], "avg_cost_per_day": 70},
+    {"city": "Kerala", "trip_type": "adventure", "budget": "medium", "season": "summer", "attractions": ["Munnar Tea Gardens", "Alleppey Backwaters", "Kochi Fort", "Periyar Wildlife Sanctuary"], "avg_cost_per_day": 100},
+    {"city": "Rishikesh", "trip_type": "spiritual", "budget": "low", "season": "summer", "attractions": ["Ganga Aarti", "Ram Jhula", "Neelkanth Mahadev Temple", "White Water Rafting"], "avg_cost_per_day": 50},
+    {"city": "Varanasi", "trip_type": "spiritual", "budget": "low", "season": "winter", "attractions": ["Ganga Ghats", "Kashi Vishwanath Temple", "Sarnath", "Dashashwamedh Ghat"], "avg_cost_per_day": 45},
+    {"city": "Udaipur", "trip_type": "romantic", "budget": "medium", "season": "winter", "attractions": ["City Palace", "Lake Pichola", "Jag Mandir", "Saheliyon ki Bari"], "avg_cost_per_day": 80},
+    # Add remaining entries similarly...
+]
+
+def find_destinations(trip_type, budget=None, season=None):
+    # Exact match first
+    matches = [d for d in DESTINATIONS if d["trip_type"] == trip_type and d["budget"] == budget and d["season"] == season]
+    if matches:
+        return matches
+
+    # Fallback: match trip_type only
+    fallback = [d for d in DESTINATIONS if d["trip_type"] == trip_type]
+    if fallback:
+        return fallback
+
+    # Last fallback: all destinations
+    return DESTINATIONS

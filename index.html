@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google Fonts + Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 AI Travel Planner</h1>
+
+        <!-- Travel Form -->
+        <form method="POST" class="travel-form">
+            <label for="trip_type">Trip Type:</label>
+            <select name="trip_type" id="trip_type" required>
+                <option value="">-- Select --</option>
+                <option value="adventure">Adventure</option>
+                <option value="family">Family</option>
+                <option value="romantic">Romantic</option>
+                <option value="cultural">Cultural</option>
+                <option value="beach">Beach</option>
+            </select>
+
+            <label for="budget">Budget:</label>
+            <select name="budget" id="budget" required>
+                <option value="">-- Select --</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+
+            <label for="season">Season:</label>
+            <select name="season" id="season" required>
+                <option value="">-- Select --</option>
+                <option value="summer">Summer</option>
+                <option value="winter">Winter</option>
+                <option value="spring">Spring</option>
+                <option value="autumn">Autumn</option>
+            </select>
+
+            <label for="days">Number of Days:</label>
+            <input type="text" name="days" id="days" placeholder="e.g. 5" required>
+
+            <button type="submit">✨ Find My Trip</button>
+        </form>
+
+        <!-- Results Section -->
+        {% if result %}
+            {% if result.error %}
+                <div class="error-card">
+                    ⚠️ {{ result.error }}
+                </div>
+            {% else %}
+                <div class="result-card">
+                    <h2>📍 Destination: <span>{{ result.city }}</span></h2>
+                    <p><i class="fas fa-map-marked-alt"></i> <strong>Attractions:</strong> {{ result.attractions | join(', ') }}</p>
+                    <p><i class="fas fa-wallet"></i> <strong>Total Cost:</strong> ₹{{ result.total_cost }}</p>
+
+                    <div class="info-box">
+                        <h3>🗓️ AI Itinerary</h3>
+                        <p>{{ result.itinerary }}</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>💡 Travel Tips</h3>
+                        <p>{{ result.tips }}</p>
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
